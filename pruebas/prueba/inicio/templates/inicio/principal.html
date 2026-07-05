@@ -1,0 +1,46 @@
+{% extends 'inicio/encabezado.html' %}
+{% load static %}
+
+{% block titulo %} Alumnos - DSM {% endblock %}
+
+{% block imagen_modulo %}
+<img src="{% static 'inicio/images/home.png' %}" alt="Home">
+{% endblock %}
+
+{% block texto_modulo %}
+Alumnos <span>DSM</span>
+{% endblock %}
+
+{% block encabezado_pagina %} Alumnos {% endblock %}
+
+{% block contenido %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title">DSM</h6>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Matrícula</th>
+                        <th>Nombre</th>
+                        <th>Carrera</th>
+                        <th>Turno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <img src="" alt="Foto Alumno" class="img-media">
+                        </td>
+                        <td class="text-semibold">UTM1234TIC</td>
+                        <td class="muted">Nathalia</td>
+                        <td class="muted">Tic</td>
+                        <td class="muted">Matutino</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
