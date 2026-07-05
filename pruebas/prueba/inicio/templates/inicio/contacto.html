@@ -1,0 +1,41 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block imagen_modulo %}
+<img src="" alt="Contacto">
+{% endblock %}
+
+{% block texto_modulo %}
+Contacto <span></span>
+{% endblock %}
+
+{% block encabezado_pagina %} Contacto {% endblock %}
+
+{% block contenido %}
+    <div style="padding: 20px;">
+
+        <h2>Contacto</h2>
+
+        <form action="#" method="POST" role="form">
+            {% csrf_token %} 
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Nombre:</label>
+                <input type="text" name="nombre" placeholder="Escribe tu nombre completo" style="width: 100%; max-width: 400px; padding: 6px; border: 1px solid #ccc;">
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Mensaje:</label>
+                <textarea name="mensaje" rows="10" placeholder="Escribe tu mensaje aquí..." style="width: 100%; max-width: 400px; padding: 6px; border: 1px solid #ccc; font-family: inherit;"></textarea>
+            </div>
+            
+            <div>
+                <input type="submit" value="Enviar" style="padding: 8px 15px; background-color: #333; color: white; border: none; cursor: pointer;">
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}
