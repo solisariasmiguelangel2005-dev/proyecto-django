@@ -1,0 +1,58 @@
+{% extends 'inicio/encabezado.html' %}
+{% load static %}
+
+{% block titulo %} Registro {% endblock %}
+
+{% block imagen_modulo %}
+<img src="{% static 'inicio/images/registrar.png' %}" alt="Registro"> 
+{% endblock %}
+
+{% block texto_modulo %}
+Registro <span>DSM</span>
+{% endblock %}
+
+{% block encabezado_pagina %} Registro {% endblock %}
+
+{% block contenido %}
+<div style="padding: 20px;">
+
+    <form action="#" method="POST" role="form">
+        {% csrf_token %}
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Matricula:</label>
+            <input type="text" name="matricula" placeholder="Ingresa tu matrícula" style="width: 100%; max-width: 400px; padding: 6px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Nombre:</label>
+            <input type="text" name="nombre" placeholder="Ingresa tu nombre completo" style="width: 100%; max-width: 400px; padding: 6px; border: 1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Carrera:</label>
+            <select name="carrera" style="width: 100%; max-width: 400px; padding: 6px; border: 1px solid #ccc;">
+                <option value="">Selecciona una carrera...</option>
+                <option value="DGS">Desarrollo de Software Multiplataforma (DGS)</option>
+                <option value="DSM">Diseño Digital (DSM)</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">Turno:</label>
+            <label style="font-weight: normal; margin-right: 15px;">
+                <input type="radio" name="turno" value="Matutino" checked> Matutino
+            </label>
+            <label style="font-weight: normal;">
+                <input type="radio" name="turno" value="Vespertino"> Vespertino
+            </label>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <input type="submit" value="Enviar Datos" style="padding: 8px 15px; background-color: #333; color: white; border: none; cursor: pointer;">
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}
