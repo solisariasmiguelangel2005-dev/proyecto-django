@@ -1,0 +1,39 @@
+{% extends 'inicio/encabezado.html' %}
+{% load static %}
+
+{% block titulo %} Alumnos - DSM {% endblock %}
+
+{% block imagen_modulo %}
+<img src="{% static 'inicio/images/home.png' %}" alt="Home">
+{% endblock %}
+
+{% block texto_modulo %}
+Alumnos <span>DSM</span>
+{% endblock %}
+
+{% block encabezado_pagina %} Confirmar Eliminación {% endblock %}
+
+{% block contenido %}
+
+    <div class="container mt-4">
+        <h4>¿Estás seguro de que deseas eliminar este comentario?</h4>
+
+        <table class="table table-bordered mt-3">
+            <tr>
+                <th>Usuario</th>
+                <td>{{ comentario.usuario }}</td>
+            </tr>
+            <tr>
+                <th>Mensaje</th>
+                <td>{{ comentario.mensaje }}</td>
+            </tr>
+        </table>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+            <a href="{% url 'consultarComentario' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+
+{% endblock %}

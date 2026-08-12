@@ -1,0 +1,57 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+
+{% block titulo %}Carga de Archivos{% endblock %}
+
+{% block imagen_modulo %}
+<img src="" alt="Carga de Archivos">
+{% endblock %}
+
+{% block texto_modulo %}
+Carga de Archivos <span></span>
+{% endblock %}
+
+{% block encabezado_pagina %} Carga de Archivos {% endblock %}
+
+{% block contenido %}
+<div style="padding: 20px;">
+
+    <h2>Carga de Archivos</h2>
+
+    <form class="form-horizontal" action="{% url 'subir' %}" method="POST" enctype="multipart/form-data" role="form">
+        {% csrf_token %}
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Título:</label>
+                    <div class="col-sm-10">
+                        <input name="titulo" type="text" class="form-control" placeholder="Título del archivo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Descripción:</label>
+                    <div class="col-sm-10">
+                        <textarea name="descripcion" cols="50" rows="6" class="form-control" placeholder="Describe el archivo..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Archivo:</label>
+                    <div class="col-sm-10">
+                        <input name="archivo" type="file" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-actions text-right">
+                    <input type="submit" value="Subir" class="btn btn-primary">
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

@@ -24,11 +24,11 @@ Comentarios <span></span>
             <tr>
                 <td>{{ c.usuario }}</td>
                 <td>{{ c.mensaje }}</td>
-                <td>Editar</td>
-                <td>Eliminar</td>
+                <td><a href="{% url 'ConsultaIndividual' id=c.id %}">Editar</a></td>
+                <td><a href="{% url 'eliminarComentario' id=c.id %}">Eliminar</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</div>
+
 {% endblock %}
